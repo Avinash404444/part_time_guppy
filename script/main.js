@@ -9,7 +9,17 @@ addEventListener('DOMContentLoaded',()=>{
   document.querySelector(".bottam-section").innerHTML=bottemData
   document.querySelector(".pc-bottam-section").innerHTML=pcbottem
 })
+window.startFullscreen=()=>{{
+      let elem = document.documentElement;
 
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { // Safari
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { // IE11
+        elem.msRequestFullscreen();
+      }
+}}
 
 let image =0;
 let currentIndex = 2;
@@ -132,6 +142,7 @@ window.car=function(value) {
          document.querySelector('.offer-section-product-2').insertAdjacentHTML('beforeend', productHTML);     
    
 }
+
 
 
 
